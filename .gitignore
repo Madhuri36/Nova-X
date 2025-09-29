@@ -1,0 +1,65 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Node modules
+node_modules/
+
+# Vite / build output
+dist/
+dist-ssr/
+
+# Local env files
+.env
+.env.*.local
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# MacOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Yarn
+.yarn-integrity
+.pnp.*
+
+# npm
+.npm
+
+# Cache
+.cache
+*.tgz
+
+# Jest / testing
+jest-cache/
+jest-report/
+
+# Tailwind cache
+.tailwindcache
+
+# Optional: Parcel or other bundlers
+.parcel-cache/
+
+# Node REPL history
+.node_repl_history
