@@ -1,17 +1,19 @@
 import { OrbitControls } from "@react-three/drei";
+import { Physics } from "@react-three/rapier";
 import Lights from "./Lights.jsx";
 import { Level } from "./Level/Level.jsx";
-import { Physics } from "@react-three/rapier";
-import Player from "./Player.jsx";
+
 export default function Experience() {
-  return(
-  <>
-    <OrbitControls makeDefault />
-    <Physics debug>
+  return (
+    <>
+      {/* Camera controls */}
+      <OrbitControls makeDefault />
+
+      {/* Rapier physics world */}
+      <Physics>
         <Lights />
         <Level />
-        <Player />
-    </Physics>
+      </Physics>
     </>
   );
 }
