@@ -1,8 +1,14 @@
-## NovaX
+## 🚀 Introduction
 
-```NovaX is an exciting 3D browser-based game where the player controls a rolling ball and must avoid a series of incoming obstacles. Test your reflexes, collect points, and survive as long as you can!```
+Nova-X is an exciting 3D browser-based game where the player controls a rolling ball and must avoid a series of incoming obstacles. Test your reflexes, collect points, and survive as long as you can!
 
-## Getting Started
+## 🛠️ Tech Stack
+- Three.js
+- React Three Fiber
+- TailwindCSS
+- Shaders
+
+## ⚙️ Getting Started
 
 ### 1. Clone the Repository
 
@@ -29,4 +35,6 @@ Start the development server:
 npm run dev
 # or
 yarn dev
+```
+
 
