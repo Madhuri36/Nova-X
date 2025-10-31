@@ -1,4 +1,4 @@
-# Ball Run Game
+# Nova-X
 
 In this game, you control a ball and must carefully avoid obstacles to reach the end of each level. \
 The goal is to complete all levels and discover the finale. \
@@ -8,13 +8,13 @@ Have fun!
 
 ## Screenshots
 
+<!-- 
 ![example2](https://github.com/kseniya7991/ball-run-game/blob/master/example1.png)
 ![example](https://github.com/kseniya7991/ball-run-game/blob/master/example2.png)
-![example](https://github.com/kseniya7991/ball-run-game/blob/master/example3.png)
+![example](https://github.com/kseniya7991/ball-run-game/blob/master/example3.png) -->
 
-## Live
 
-The project is live here [https://ball-run-game.vercel.app/](https://ball-run-game.vercel.app/). 
+
 
 ## Technologies
 
@@ -53,7 +53,7 @@ npm run build
 
 Open to ideas on how to improve the project :heart:
 
-**Kseniya Stoichykava** — _Creative Front-End Developer_
+
 
 ## Source of inspiration :sparkles:
 
