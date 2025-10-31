@@ -4,7 +4,7 @@ import { RigidBody } from "@react-three/rapier";
 import * as THREE from "three";
 
 import { boxGeometry, levelMaterials } from "./Level";
-import { Floor } from "./Floor";
+
 
 export function BlockSpinner({
     geometry = boxGeometry,
@@ -23,8 +23,8 @@ export function BlockSpinner({
 
     return (
         <group position={position}>
-            <Floor />
             <RigidBody
+                name="obstacle"
                 ref={obstacle}
                 type="kinematicPosition"
                 position={[0, 0.3, 0]}
