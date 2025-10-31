@@ -9,11 +9,11 @@ body,
     background: ivory;
 }
 
- @font-face {
+@font-face {
     font-family: "Days";
     src: url("/Days.woff");
     font-display: swap;
-} 
+}
 
 /* Interface */
 
@@ -42,7 +42,7 @@ body,
     font-size: 80px;
     background: #00000033;
     padding-top: 10px;
-   
+
     visibility: hidden;
     pointer-events: none;
     cursor: pointer;
@@ -70,11 +70,13 @@ body,
 }
 
 @keyframes hideHeart {
+
     0%,
     50%,
     70% {
         opacity: 1;
     }
+
     25%,
     60%,
     100% {
@@ -87,31 +89,140 @@ body,
  */
 .interface__controls {
     position: absolute;
-    bottom: 10%;
-    left: 0;
-    width: 100%;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 }
 
 .interface__controls .raw {
     display: flex;
-    justify-content: center;
+    gap: 12px;
+    align-items: center;
 }
 
 .interface__controls .key {
-    width: 40px;
-    height: 40px;
-    margin: 4px;
-    border: 2px solid #ffffff;
-    background: #ffffff44;
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    /* CHANGED: Neutral border color */
+    border: 2px solid rgba(150, 150, 150, 0.4);
+    /* CHANGED: Neutral background gradient */
+    background: linear-gradient(145deg, rgba(128, 128, 128, 0.25), rgba(100, 100, 100, 0.35));
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2);
+    transition: all 0.15s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.interface__controls .key::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    transition: all 0.15s ease;
+}
+
+/* Arrow directions */
+.interface__controls .raw:nth-child(1) .key::before {
+    /* Up arrow */
+    border-width: 0 10px 14px 10px;
+    /* CHANGED: Neutral arrow color */
+    border-color: transparent transparent rgba(220, 220, 220, 0.9) transparent;
+}
+
+.interface__controls .raw:nth-child(2) .key:nth-child(1)::before {
+    /* Left arrow */
+    border-width: 10px 14px 10px 0;
+    /* CHANGED: Neutral arrow color */
+    border-color: transparent rgba(220, 220, 220, 0.9) transparent transparent;
+}
+
+.interface__controls .raw:nth-child(2) .key:nth-child(2)::before {
+    /* Down arrow */
+    border-width: 14px 10px 0 10px;
+    /* CHANGED: Neutral arrow color */
+    border-color: rgba(220, 220, 220, 0.9) transparent transparent transparent;
+}
+
+.interface__controls .raw:nth-child(2) .key:nth-child(3)::before {
+    /* Right arrow */
+    border-width: 10px 0 10px 14px;
+    /* CHANGED: Neutral arrow color */
+    border-color: transparent transparent transparent rgba(220, 220, 220, 0.9);
+}
+
+.interface__controls .key::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    pointer-events: none;
 }
 
 .interface__controls .key.large {
-    width: 144px;
+    width: 180px;
+    height: 56px;
+    font-size: 15px;
+    /* CHANGED: Neutral text color */
+    color: rgba(220, 220, 220, 0.9);
+    font-family: "Days", cursive;
+    letter-spacing: 3px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+
 .interface__controls .key.active {
-    background: #ffffff99;
+    /* CHANGED: Brighter neutral active background */
+    background: linear-gradient(145deg, rgba(220, 220, 220, 0.7), rgba(190, 190, 190, 0.8));
+    /* CHANGED: Brighter neutral active border */
+    border-color: rgba(230, 230, 230, 0.9);
+    transform: translateY(3px) scale(0.97);
+    /* CHANGED: Neutral glow */
+    box-shadow: 0 2px 10px rgba(200, 200, 200, 0.6),
+        inset 0 1px 3px rgba(255, 255, 255, 0.4),
+        0 0 25px rgba(220, 220, 220, 0.5);
 }
+
+.interface__controls .key.active::before {
+    /* CHANGED: Bright white active arrow */
+    border-color: rgba(255, 255, 255, 1);
+    /* CHANGED: White glow */
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
+}
+
+.interface__controls .raw:nth-child(2) .key:nth-child(1).active::before {
+    /* CHANGED: Bright white active arrow */
+    border-color: transparent rgba(255, 255, 255, 1) transparent transparent;
+}
+
+.interface__controls .raw:nth-child(2) .key:nth-child(2).active::before {
+    /* CHANGED: Bright white active arrow */
+    border-color: rgba(255, 255, 255, 1) transparent transparent transparent;
+}
+
+.interface__controls .raw:nth-child(2) .key:nth-child(3).active::before {
+    /* CHANGED: Bright white active arrow */
+    border-color: transparent transparent transparent rgba(255, 255, 255, 1);
+}
+
+.interface__controls .key.large.active {
+    /* CHANGED: Bright white active text */
+    color: rgba(255, 255, 255, 1);
+}
+
 
 /*
 * Loading
@@ -144,6 +255,7 @@ body,
     background: radial-gradient(circle closest-side, #fff 94%, #fff0) right/calc(200% - 1em) 100%;
     animation: loading 1s infinite alternate linear;
 }
+
 .loading__text::before {
     content: "Loading...";
     line-height: 1em;

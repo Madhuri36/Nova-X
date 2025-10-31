@@ -93,7 +93,7 @@ export default function Interface() {
                         <div className={`key ${rightward && "active"}`}></div>
                     </div>
                     <div className="raw">
-                        <div className={`key large ${jump && "active"}`}></div>
+                        <div className={`key large ${jump && "active"}`}>JUMP</div>
                     </div>
                 </div>
             </div>
