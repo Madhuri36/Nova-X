@@ -3,16 +3,15 @@ import { useFrame } from "@react-three/fiber";
 import { RigidBody } from "@react-three/rapier";
 
 import { boxGeometry, levelMaterials } from "./Level";
-import { Floor } from "./Floor";
 
 export function BlockLimbo({
     geometry = boxGeometry,
     material = levelMaterials.obstacle,
     position = [0, 0, 0],
 }) {
-    const [randomSpeed] = useState(() => Math.random() + 0.6);
-    const [timeOffset] = useState(() => Math.random() * Math.PI * 2);
     const obstacle = useRef();
+    const [randomSpeed] = useState(() => Math.random() + 0.8);
+    const [timeOffset] = useState(() => Math.random() * Math.PI * 2);
 
     useFrame((state) => {
         const time = state.clock.getElapsedTime();
@@ -26,8 +25,8 @@ export function BlockLimbo({
 
     return (
         <group position={position}>
-            <Floor />
             <RigidBody
+                name="Limbo"
                 ref={obstacle}
                 type="kinematicPosition"
                 position={[0, 0.3, 0]}

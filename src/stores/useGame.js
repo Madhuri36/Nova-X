@@ -3,7 +3,7 @@ import { subscribeWithSelector } from "zustand/middleware";
 
 import { BlockLimbo } from "../Level/BlockLimbo";
 import { BlockAxe } from "../Level/BlockAxe";
-import { BlockSpinner } from "../Level/BlockSpinner";
+import { BlockSpinner } from "../Level/BLockSpinner";
 import { BlockLava } from "../Level/BlockLava";
 import { BlockNarrow } from "../Level/BlockNarrow";
 import { BlockSeesaw } from "../Level/BlockSeesaw";
