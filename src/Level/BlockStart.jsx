@@ -31,14 +31,14 @@ export function BlockStart({
                 rotationIntensity={0.25}
                 position={[position[0], position[1], position[2] + 0.2]}>
                 {level === 1 &&
-                    ["BALL", "RUN"].map((text, index) => (
+                    ["NovaX", "GAME"].map((text, index) => (
                         <Text
                             key={text}
                             font="./Days.woff"
                             maxWidth={0.5}
                             lineHeight={0.75}
                             textAlign="left"
-                            position={[index === 0 ? -0.85 : 0.75, 0.4, 0]}
+                            position={[index === 0 ? -0.85 : 0.9, 0.4, 0]}
                             rotation-y={index === 0 ? 0.5 : -0.5}
                             scale={0.35}
                             fillOpacity={textOpacity}>
