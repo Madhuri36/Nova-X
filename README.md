@@ -49,12 +49,6 @@ To build the production version, run the following command:
 npm run build
 ```
 
-## Project Developer
-
-Open to ideas on how to improve the project :heart:
-
-
-
 ## Source of inspiration :sparkles:
 
 -   [threejs-journey](https://threejs-journey.com/)
