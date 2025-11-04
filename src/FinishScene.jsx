@@ -64,9 +64,13 @@ export default function FinishScene({ ballsData }) {
                     restitution={0.2}
                     onCollisionEnter={handleCollisionEnter}
                     position-z={-zPosition}>
+                    {/* INVISIBLE FLOOR - Only for physics */}
                     <mesh position={[0, 0, 0]} receiveShadow>
                         <boxGeometry args={[2000, 0.1, 2000]} />
-                        <meshStandardMaterial color={bgColor} />
+                        <meshBasicMaterial 
+                            transparent 
+                            opacity={0}
+                        />
                     </mesh>
                 </RigidBody>
 

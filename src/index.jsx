@@ -20,6 +20,14 @@ root.render(
         ]}>
         <Canvas
             shadows
+            gl={{ 
+                antialias: true,
+                alpha: false 
+            }}
+            // Add this to disable fog
+            onCreated={({ scene }) => {
+                scene.fog = null;
+            }}
             camera={{
                 fov: 45,
                 near: 0.1,
